@@ -1,0 +1,21 @@
+{
+    "name": "root/reysofts_php_api",
+    "description": "my api empire",
+    "type": "api",
+    "require": {
+        "reinanbr/mille_php": "dev-main"
+    },
+    "license": "gpl-3",
+    "autoload": {
+        "psr-4": {
+            "Root\\ReysoftsPhpApi\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "reinanbr",
+            "email": "perseu912@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev"
+}

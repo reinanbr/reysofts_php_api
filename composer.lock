@@ -1,0 +1,59 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "cc38c51a4f3e562ea4e025807386a2ca",
+    "packages": [
+        {
+            "name": "reinanbr/mille_php",
+            "version": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/reinanbr/mille_php.git",
+                "reference": "30d9ab31e801d0506e09d85de1ae221c304ca65c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/reinanbr/mille_php/zipball/30d9ab31e801d0506e09d85de1ae221c304ca65c",
+                "reference": "30d9ab31e801d0506e09d85de1ae221c304ca65c",
+                "shasum": ""
+            },
+            "default-branch": true,
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Mille\\": "./Mille/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "mit"
+            ],
+            "authors": [
+                {
+                    "name": "reinanbr",
+                    "email": "perseu912@gmail.com"
+                }
+            ],
+            "description": "framework for microservices in php",
+            "support": {
+                "issues": "https://github.com/reinanbr/mille_php/issues",
+                "source": "https://github.com/reinanbr/mille_php/tree/V0.0.1"
+            },
+            "time": "2024-09-22T12:48:48+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "dev",
+    "stability-flags": {
+        "reinanbr/mille_php": 20
+    },
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": [],
+    "plugin-api-version": "2.6.0"
+}
