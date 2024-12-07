@@ -18,6 +18,38 @@ function loadData($file) {
     return ["Rotine" => []];
 }
 
+// Função para salvar o JSON
+function saveData($file, $data) {
+    file_put_contents($file, json_encode($data, JSON_PRETTY_PRINT));
+}
+
+// Processar atualização via AJAX
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['key'])) {
+    $data = loadData($file);
+
+    // Obter a data atual
+    $dateKey = date("Ymd");
+    foreach ($data['Rotine'] as &$entry) {
+        if ($entry['date_key'] === $dateKey) {
+            $entry[$_POST['key']] = intval($_POST['value']);
+        }
+    }
+    saveData($file, $data);
+
+    // Calcular porcentagem de progresso
+    $today = array_filter($data['Rotine'], fn($item) => $item['date_key'] === $dateKey);
+    if (!empty($today)) {
+        $today = array_values($today)[0];
+        $totalActivities = count($today) - 2; // Exclui 'date' e 'date_key'
+        $completedActivities = array_sum(array_filter($today, fn($value) => $value === 1));
+        $completionPercentage = ($totalActivities > 0) ? ($completedActivities / $totalActivities) * 100 : 0;
+
+        // Responder com JSON
+        echo json_encode(['percentage' => round($completionPercentage, 2)]);
+        exit;
+    }
+}
+
 // Carregar dados para exibição inicial
 $data = loadData($file);
 $date = date("Y-m-d");
@@ -35,7 +67,7 @@ if (empty($today)) {
         }
     }
     $data['Rotine'][] = $today;
-    file_put_contents($file, json_encode($data, JSON_PRETTY_PRINT));
+    saveData($file, $data);
 } else {
     $today = array_values($today)[0];
 }
@@ -59,7 +91,8 @@ $completionPercentage = ($totalActivities > 0) ? ($completedActivities / $totalA
             formData.append('key', key);
             formData.append('value', value);
 
-            fetch('save_update.php', {
+            fetch('/evox/rotine/api', {
+
                 method: 'POST',
                 body: formData
             })
@@ -67,19 +100,19 @@ $completionPercentage = ($totalActivities > 0) ? ($completedActivities / $totalA
             .then(data => {
                 if (data.percentage !== undefined) {
                     document.getElementById('progress').textContent = `Progresso: ${data.percentage}%`;
-                } else if (data.error) {
-                    alert(data.error);
                 }
             })
             .catch(error => console.error('Erro:', error));
         }
 
-        // Função para desmarcar uma atividade
-        function clearActivity(key) {
-            const radio = document.querySelector(`input[name="${key}"]`);
-            if (radio) {
+        // Função para desmarcar um rádio ao clicar nele
+        function toggleRadio(radio) {
+            if (radio.checked) {
                 radio.checked = false;
-                updateActivity(key, 0);
+                updateActivity(radio.name, 0); // Envia o valor 0 para o servidor
+            } else {
+                radio.checked = true;
+                updateActivity(radio.name, 1); // Envia o valor 1 para o servidor
             }
         }
     </script>
@@ -92,14 +125,9 @@ $completionPercentage = ($totalActivities > 0) ? ($completedActivities / $totalA
                 <?php if (!in_array($key, ["date", "date_key"])): ?>
                     <li>
                         <label>
-                            <input 
-                                type="radio" 
-                                name="<?= $key ?>" 
-                                <?= $value == 1 ? 'checked' : '' ?> 
-                                onchange="updateActivity('<?= $key ?>', this.checked ? 1 : 0)">
+                            <input type="radio" name="<?= $key ?>" value="1" <?= $value == 1 ? 'checked' : '' ?> onclick="toggleRadio(this)">
                             <?= ucfirst(str_replace('_', ' ', $key)) ?>
                         </label>
-                        <button type="button" onclick="clearActivity('<?= $key ?>')">Desmarcar</button>
                     </li>
                 <?php endif; ?>
             <?php endforeach; ?>
