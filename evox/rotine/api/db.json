@@ -183,6 +183,52 @@
             "art18_girl_porn": 0,
             "art18_girl_only": 0,
             "art18_scene_without": 0
+        },
+        {
+            "date": "2024-12-09",
+            "date_key": "20241209",
+            "newsletter_news": 0,
+            "newsletter_dev": 0,
+            "newsletter_geek": 0,
+            "newsletter_philo": 1,
+            "citation": 0,
+            "fofoca": 0,
+            "academia": 0,
+            "treino_de_voz": 0,
+            "apis": 0,
+            "art18_others_post": 0,
+            "artigos": 0,
+            "bots": 0,
+            "advanced_math_blinx": 0,
+            "sites": 0,
+            "faculdade_trabalhos": 0,
+            "newsletter_news_meio_dia": 0,
+            "newsletter_dev_meio_dia": 0,
+            "newsletter_geek_meio_dia": 0,
+            "newsletter_philo_meio_dia": 0,
+            "fofoca_meio_dia": 0,
+            "almoco": 0,
+            "fitness_post": 0,
+            "meme": 0,
+            "hacking_post": 0,
+            "libs": 0,
+            "framework": 0,
+            "duolingo": 0,
+            "brain_train": 0,
+            "leetcode": 0,
+            "new_lang": 0,
+            "freelar": 0,
+            "estudos": 0,
+            "apps": 0,
+            "newsletter_news_noite": 0,
+            "newsletter_dev_noite": 0,
+            "newsletter_geek_noite": 0,
+            "newsletter_philo_noite": 0,
+            "fofoca_noite": 0,
+            "art18_list_edit": 0,
+            "art18_girl_porn": 0,
+            "art18_girl_only": 0,
+            "art18_scene_without": 0
         }
     ],
     "Tasks": [
@@ -192,6 +238,72 @@
             "date_create": 1733513303,
             "date_end": 1733675280,
             "ok": false
+        },
+        {
+            "key": "675657b3bdf83",
+            "name": "reysofts",
+            "date_create": 1733711795,
+            "date_end": 1734352620
+        },
+        {
+            "key": "6756580257ab5",
+            "name": "REINAN BEZERRA DA SILVA SANTOS",
+            "date_create": 1733711874,
+            "date_end": 1734046620
+        },
+        {
+            "key": "675658577d1bb",
+            "name": "REINAN BEZERR",
+            "date_create": 1733711959,
+            "date_end": 1733528340
+        },
+        {
+            "key": "675658c60b0ca",
+            "name": "reinanbr",
+            "date_create": 1733712070,
+            "date_end": 1733787660
+        },
+        {
+            "key": "67565904a39bb",
+            "name": "llp\u00e7ol",
+            "date_create": 1733712132,
+            "date_end": 1734565320
+        },
+        {
+            "key": "6756593ac1f2a",
+            "name": "reinanbryrtrty",
+            "date_create": 1733712186,
+            "date_end": 1734565380
+        },
+        {
+            "key": "67565a4cae6d0",
+            "name": "fgfdgdfgfgfgf",
+            "date_create": 1733712460,
+            "date_end": 1734824820
+        },
+        {
+            "key": "67565adca9b35",
+            "name": "4tt5rh",
+            "date_create": 1733712604,
+            "date_end": 1734479340
+        },
+        {
+            "key": "67565b2de5da8",
+            "name": "vai krl",
+            "date_create": 1733712685,
+            "date_end": 1734133860
+        },
+        {
+            "key": "67565b3f12245",
+            "name": "vai porra",
+            "date_create": 1733712703,
+            "date_end": 1734393060
+        },
+        {
+            "key": "67565b9dea6e3",
+            "name": "agora vai",
+            "date_create": 1733712797,
+            "date_end": 1734133980
         }
     ]
 }

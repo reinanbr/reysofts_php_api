@@ -46,12 +46,15 @@ $completedActivities = array_sum(array_filter($today, fn($value) => $value === 1
 $completionPercentage = ($totalActivities > 0) ? ($completedActivities / $totalActivities) * 100 : 0;
 ?>
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rotina do Dia</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Site com Navbar e Footer</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <script>
         // Função para atualizar uma atividade via AJAX
         function updateActivity(key, value) {
@@ -85,6 +88,39 @@ $completionPercentage = ($totalActivities > 0) ? ($completedActivities / $totalA
     </script>
 </head>
 <body>
+      <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <!-- Substitua 'logo.png' pelo caminho da sua imagem -->
+        <img src="https://via.placeholder.com/40" alt="Logo" class="d-inline-block align-text-top" style="width: 40px; height: 40px; border-radius: 50%;">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#home">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/evox/rotine/api/rotine.php">Rotina</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/evox/rotine/api/create_task.php">Criar Tarefas</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/evox/rotine/api/diary,php">Diário</a>
+      </li>
+     <li class="nav-item">
+            <a class="nav-link" href="/evox/rotine/api/diary,php">Diário</a>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+
     <h1>Atividades do Dia: <?= $date ?></h1>
     <form>
         <ul>
@@ -99,13 +135,28 @@ $completionPercentage = ($totalActivities > 0) ? ($completedActivities / $totalA
                                 onchange="updateActivity('<?= $key ?>', this.checked ? 1 : 0)">
                             <?= ucfirst(str_replace('_', ' ', $key)) ?>
                         </label>
-                        <button type="button" onclick="clearActivity('<?= $key ?>')">Desmarcar</button>
+                        <button type="button" onclick="clearActivity('<?= $key ?>')">X</button>
                     </li>
                 <?php endif; ?>
             <?php endforeach; ?>
         </ul>
     </form>
     <h2 id="progress">Progresso: <?= round($completionPercentage, 2) ?>%</h2>
+      <!-- Footer -->
+  <footer class="bg-primary text-white mt-5 py-3">
+    <div class="container text-center">
+      <p class="mb-0">&copy; 2024 SeuSite. Todos os direitos reservados.</p>
+      <div class="mt-2">
+        <a href="#" class="text-white me-3">Termos</a>
+        <a href="#" class="text-white me-3">Privacidade</a>
+        <a href="#" class="text-white">Contato</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
 </body>
 </html>
 
