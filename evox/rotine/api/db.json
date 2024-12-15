@@ -187,9 +187,9 @@
         {
             "date": "2024-12-09",
             "date_key": "20241209",
-            "newsletter_news": 0,
-            "newsletter_dev": 0,
-            "newsletter_geek": 0,
+            "newsletter_news": 1,
+            "newsletter_dev": 1,
+            "newsletter_geek": 1,
             "newsletter_philo": 1,
             "citation": 0,
             "fofoca": 0,
@@ -304,6 +304,18 @@
             "name": "agora vai",
             "date_create": 1733712797,
             "date_end": 1734133980
+        }
+    ],
+    "Diary": [
+        {
+            "author": "admin",
+            "timestamp": "2024-12-09 20:21:14",
+            "content": "Eh complicado, mas eh muito bom"
+        },
+        {
+            "author": "admin",
+            "timestamp": "2024-12-09 20:22:12",
+            "content": "Hmmm"
         }
     ]
 }
