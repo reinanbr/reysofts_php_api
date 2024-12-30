@@ -9,15 +9,16 @@ if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+
+  <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Criar Tarefa</title>
-    <style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Site com Navbar e Footer</title>
+  <style>
         body {
             font-family: Arial, sans-serif;
-            margin: 20px;
+            margin: 0px;
         }
         .task {
             border: 1px solid #ddd;
@@ -35,9 +36,7 @@ if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
             font-size: 0.9em;
             color: #555;
         }
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
+        
         }
         form {
             max-width: 400px;
@@ -48,7 +47,7 @@ if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
             margin-bottom: 5px;
             font-weight: bold;
         }
-        input, button {
+        input, .button_task {
             width: 100%;
             padding: 8px;
             margin-bottom: 15px;
@@ -69,8 +68,42 @@ if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
             font-size: 16px;
         }
     </style>
+    <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    
 </head>
 <body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <!-- Substitua 'logo.png' pelo caminho da sua imagem -->
+        <img src="https://via.placeholder.com/40" alt="Logo" class="d-inline-block align-text-top" style="width: 40px; height: 40px; border-radius: 50%;">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/evox/rotine/api">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/evox/rotine/api/rotine.php">Rotina</a>
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/evox/rotine/api/read_diary.php">Diário</a>
+	  </li>
+	 <li class="nav-item">
+            <a class="nav-link" href="/evox/rotine/api/create_tasks.php">Tarefas</a>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+
     <h1>Criar Nova Tarefa</h1>
     <form id="taskForm">
         <label for="name">Nome da Tarefa:</label>
@@ -79,7 +112,7 @@ if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
         <label for="date_end">Data de Término:</label>
         <input type="datetime-local" id="date_end" name="date_end" required>
 
-        <button type="submit">Criar Tarefa</button>
+        <button class='button_task' type="submit">Criar Tarefa</button>
     </form>
     <div id="message" class="message"></div>
 
@@ -92,6 +125,19 @@ if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
 
     <h2>Tarefas Concluídas</h2>
     <div id="completedTasks"></div>
+  <!-- Footer -->
+  <br><br>  <br><br>  <br><br>  <br><br>  <br><br>
+  
+  <footer class="bg-primary text-white mt-5 py-3">
+    <div class="container text-center">
+      <p class="mb-0">&copy; 2024 SeuSite. Todos os direitos reservados.</p>
+      <div class="mt-2">
+        <a href="#" class="text-white me-3">Termos</a>
+        <a href="#" class="text-white me-3">Privacidade</a>
+        <a href="#" class="text-white">Contato</a>
+      </div>
+    </div>
+  </footer>
 
     <script>
         async function loadTasks() {
@@ -164,7 +210,8 @@ if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
             }
         });
     </script>
-
+ <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
 

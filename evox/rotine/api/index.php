@@ -35,19 +35,16 @@ if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item">
-            <a class="nav-link" href="#home">Home</a>
+            <a class="nav-link" href="/evox/rotine/api">Home</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="/evox/rotine/api/rotine.php">Rotina</a>
-          </li>
+          
           <li class="nav-item">
-            <a class="nav-link" href="/evox/rotine/api/create_task.php">Criar Tarefas</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/evox/rotine/api/diary,php">Diário</a>
+            <a class="nav-link" href="/evox/rotine/api/read_diary.php">Diário</a>
 	  </li>
 	 <li class="nav-item">
-            <a class="nav-link" href="/evox/rotine/api/diary,php">Diário</a>
+            <a class="nav-link" href="/evox/rotine/api/create_tasks.php">Tarefas</a>
           </li>
 
         </ul>

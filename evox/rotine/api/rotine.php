@@ -88,7 +88,7 @@ $completionPercentage = ($totalActivities > 0) ? ($completedActivities / $totalA
     </script>
 </head>
 <body>
-      <!-- Navbar -->
+  <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">
@@ -101,25 +101,23 @@ $completionPercentage = ($totalActivities > 0) ? ($completedActivities / $totalA
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item">
-            <a class="nav-link" href="#home">Home</a>
+            <a class="nav-link" href="/evox/rotine/api">Home</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="/evox/rotine/api/rotine.php">Rotina</a>
-          </li>
+          
           <li class="nav-item">
-            <a class="nav-link" href="/evox/rotine/api/create_task.php">Criar Tarefas</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/evox/rotine/api/diary,php">Diário</a>
-      </li>
-     <li class="nav-item">
-            <a class="nav-link" href="/evox/rotine/api/diary,php">Diário</a>
+            <a class="nav-link" href="/evox/rotine/api/read_diary.php">Diário</a>
+	  </li>
+	 <li class="nav-item">
+            <a class="nav-link" href="/evox/rotine/api/create_tasks.php">Tarefas</a>
           </li>
 
         </ul>
       </div>
     </div>
   </nav>
+
 
     <h1>Atividades do Dia: <?= $date ?></h1>
     <form>
